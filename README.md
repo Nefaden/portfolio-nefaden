@@ -18,13 +18,18 @@ npm install
 ## Usage
 
 ```sh
-npm run serve
+npm run dev
 ```
 
 ## Run tests
 
 ```sh
 npm run test:[unit|integ|features]
+```
+## Build projeck
+
+```sh
+npm run build
 ```
 
 ## Author
@@ -34,10 +39,6 @@ npm run test:[unit|integ|features]
 * Website: codewithnefaden.com
 * Twitter: [@YannDurand11](https://twitter.com/YannDurand11)
 * Github: [@Nefaden](https://github.com/Nefaden)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
