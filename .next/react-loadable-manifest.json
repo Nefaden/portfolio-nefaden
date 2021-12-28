@@ -1,1 +1,8 @@
-{}
+{
+  "../components/layouts/main.js -> ../../libs/voxel-cwn": {
+    "id": "./libs/voxel-cwn.js",
+    "files": [
+      "static/chunks/libs_voxel-cwn_js.js"
+    ]
+  }
+}
