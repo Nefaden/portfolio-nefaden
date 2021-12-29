@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
+import HiddenLink from './hidden-link'
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
@@ -48,6 +49,7 @@ const Navbar = props => {
       zIndex={1}
       {...props}
     >
+    <HiddenLink />
       <Container
         display="flex"
         p={2}
@@ -94,6 +96,7 @@ const Navbar = props => {
             alignItems="center"
             style={{ gap: 4 }}
             pl={2}
+            isExternal="true"
           >
             Source
           </LinkItem>
