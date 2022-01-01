@@ -26,6 +26,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "framer-motion": "^4.1.17",
+    "react-icons": "^4.3.1",
     "three": "^0.136.0"
   },
   "devDependencies": {

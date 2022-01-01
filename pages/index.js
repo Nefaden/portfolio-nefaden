@@ -4,10 +4,13 @@ import {
     Heading, 
     useColorModeValue, 
     Image, 
+    Icon,
     Divider, 
     Button,
     UnorderedList,
+    GridItem,
     ListItem,
+    SimpleGrid,
     Table,
     Thead,
     Tbody,
@@ -18,9 +21,20 @@ import {
 } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { 
+    IoLogoTwitter, 
+    IoLogoInstagram, 
+    IoLogoGithub, 
+    IoMail, 
+    IoLogoTwitch, 
+    IoLogoDiscord, 
+    IoLogoRss,
+    IoLogoLinkedin, 
+    IoLogoYoutube} from 'react-icons/io5'
 import Section from "../components/section"
 import Paragraph from "../components/paragraph"
 import Footer from "../components/footer"
+import ProjectCard from "../components/project-card"
 import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
@@ -35,14 +49,12 @@ const Page = () => {
             </Box>
             <br /><br />
             <Box id="bio" borderRadius="lg" p={3} mb ={6} textAlign="center" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} css={{ backdropFilter: 'blur(10px)' }}>
-                Hello, I&apos;m Yann Durand, AKA Nefaden, a french full-stack developer
-                <br /><br />
                 <Box
                     flexShrink={0}
                     mt={{ base: 4, md: 0 }}
                     ml={{ md: 6 }}
                     textAlign="center"
-                >
+                    >
                     <Image
                         borderColor="#4f5b62"
                         borderWidth={2}
@@ -52,8 +64,9 @@ const Page = () => {
                         borderRadius="full"
                         src="/images/me.png"
                         alt="Profile image"
-                    />
+                        />
                 </Box>
+                Hello, I&apos;m Yann Durand, AKA Nefaden, a french full-stack developer
             </Box>
 
             <Section id="bio" delay={0.2}>
@@ -61,7 +74,11 @@ const Page = () => {
                     About me
                 </Heading>
                 <Paragraph>
-                Born in Nantes in 1997, I&apos;ve always been a fan of digital and video games. In 2015 after my baccalaureate I decided to go to the university of computer science (without much success) but I continued in this field, to do what I like the most. Today, I&apos;m freelancing and creating on the web (video and blog) to share my passion, my knowledge. I hope you will learn a lot of things here!
+                Born in Nantes in 1997, I&apos;ve always been a fan of digital and video games. 
+                In 2015 after my baccalaureate I decided to go to the university of computer science (without much success) but I continued in this field, to do what I like the most. 
+                Today, I&apos;m software engineer developer, salary and freele. 
+                I&apos;ve decided to participate more on the web by making video and blog posts to share my passion and my knowledge. 
+                I hope you will learn a lot of things here!
                 </Paragraph>
             </Section>
 
@@ -71,13 +88,13 @@ const Page = () => {
 
             <Section id="bio" delay={0.2}>
                 <Heading as="h3" variant="section-title">
-                    What about Internet ?
+                    I&apos;m on the web
                 </Heading>
                 <Paragraph>
-                Find me on Internet, following these links :
+                If you want to take a look on what am I doin on Internet, following these links :
                 </Paragraph>
                 <br/>
-                <Table variant='simple'>
+                <Table variant='unstyled' size='sm'>
                     <Thead>
                         <Tr>
                             <Th>
@@ -86,7 +103,13 @@ const Page = () => {
                                     color="#8c45f4" 
                                     isExternal="true"
                                 >
-                                    Blog
+                                    <Button
+                                        variant="ghost"
+                                        color="#8c45f4" 
+                                        leftIcon={<Icon as={IoLogoRss} />}
+                                    >
+                                        Blog
+                                    </Button>
                                 </Link>
                             </Th>
                             <Th>
@@ -95,7 +118,13 @@ const Page = () => {
                                     color="#8c45f4" 
                                     isExternal="true"
                                 >
-                                    Youtube
+                                    <Button
+                                        variant="ghost"
+                                        color="#8c45f4" 
+                                        leftIcon={<Icon as={IoLogoYoutube} />}
+                                    >
+                                        YouTube
+                                    </Button>
                                 </Link>
                             </Th>
                             <Th>
@@ -104,7 +133,13 @@ const Page = () => {
                                     color="#8c45f4" 
                                     isExternal="true"
                                 >
-                                    Twitch
+                                    <Button
+                                        variant="ghost"
+                                        color="#8c45f4" 
+                                        leftIcon={<Icon as={IoLogoTwitch} />}
+                                    >
+                                        Twitch
+                                    </Button>
                                 </Link>
                             </Th>
                             <Th>
@@ -113,22 +148,30 @@ const Page = () => {
                                     color="#8c45f4" 
                                     isExternal="true"
                                 >
+                                <Button
+                                    variant="ghost"
+                                    color="#8c45f4" 
+                                    leftIcon={<Icon as={IoLogoDiscord} />}
+                                >
                                     Discord
+                                </Button>
                                 </Link>
                             </Th>
                         </Tr>
                     </Thead>
                 </Table>
             </Section>
+
+            <Divider />
             <br/><br/>
 
             <Section id="skills" delay={0.2}>
                 <Heading as="h3" variant="section-title">
                     Projects and Skills
                 </Heading>
-                <Table variant='simple'>
+                <Table variant='unstyled'>
                     <Thead>
-                        <Tr>
+                        <Tr color="#8c45f4" >
                             <Th>Language Skills</Th>
                             <Th>Tools Mastery</Th>
                         </Tr>
@@ -175,13 +218,13 @@ const Page = () => {
                                         Docker
                                     </ListItem>
                                     <ListItem>
-                                        Drone-CI
+                                        CI (Actions, GitLab-CI, Drone-CI)
                                     </ListItem>
                                     <ListItem>
                                         Kubernetes | Ansible
                                     </ListItem>
                                     <ListItem>
-                                        Scaleway
+                                        Scaleway (Debian & Ubuntu OS)
                                     </ListItem>
                                 </UnorderedList>
                             </Td>
@@ -189,13 +232,47 @@ const Page = () => {
                     </Tbody>
                 </Table>
                     
-                <br />
-                ADD SOME PROJECT CARD
+                <SimpleGrid columns={[1, 1, 1, 1]} spacing={2}>
+                    <GridItem>
+                        <ProjectCard
+                            projectName="cere-ar-lis"
+                            stacks="JavaScript, Ionic, AR.js"
+                            description="Children's color app using image and color recognition to generate 3D model based on the picture and colors"
+                        />
+                    </GridItem>
+                    <GridItem>
+                        <ProjectCard
+                            projectName="grasbook"
+                            stacks="JavaScript, Hapi, Python"
+                            description="Grasbook is a social network based on food. Using micro-services approaches to create it"
+                        />
+                    </GridItem>
+                    <GridItem>
+                        <ProjectCard
+                            projectName="Who's that actor"
+                            stacks="Python, TensorFlow, Pulsar, React"
+                            description="Voice recognition to identify who's speaking in a movie. Using AI (TensorFlow, deep learning and neuronal network), python and React for the front"
+                        />
+                    </GridItem>
+                    <GridItem>
+                        <ProjectCard
+                            projectName="Contact-Manager"
+                            stacks="React, Ansible, GitHub Actions"
+                            description="An App to manage your contacts. A playground for me to learn React, Ansible and GitHub Actions"
+                        />
+                    </GridItem>
+                </SimpleGrid>
                 <Box align="center" my={4}>
-                    <NextLink href="/works">
-                        <Button rightIcon={<ArrowForwardIcon />} background="#8c45f4">
-                            My portfolio
-                        </Button>
+                    <NextLink href="https://github.com/Nefaden?tab=repositories" passHref>
+                        <Link target="_blank" color={useColorModeValue('black', 'white')} >
+                            <Button
+                                backgroundColor="#8c45f4" 
+                                rightIcon={<ArrowForwardIcon />}
+                                leftIcon={<Icon as={IoLogoGithub} />}
+                            >
+                                GitHub
+                            </Button>
+                        </Link>
                     </NextLink>
                 </Box>
             </Section>
@@ -209,7 +286,7 @@ const Page = () => {
                     My resume
                 </Heading>
                 <br />
-                <BioSection>
+                <BioSection spacing={3}>
                     <BioYear>2021 - NOW</BioYear>
                         Backend developer for the France Interior Ministry @
                         <Link 
@@ -229,6 +306,7 @@ const Page = () => {
                             Digi Activity
                         </Link>
                 </BioSection>
+                <br />
                 <BioSection>
                     <BioYear>2018 - 2021</BioYear>
                         Sandwich course @
@@ -250,17 +328,89 @@ const Page = () => {
                         </Link>
                         - Engineering graduate
                 </BioSection>
+                <br />
                 <BioSection>
                     <BioYear>2016 - 2018</BioYear>
-                        Doing my BTS SIO (SLAM option) @
-                        <Link 
-                            href="https://www.la-joliverie.com/formation/129-bts-services-informatiques-aux-organisations.html" 
-                            color="#8c45f4" 
-                            isExternal="true"
-                        >
-                            La Joliverie
+                            Doing my BTS SIO (SLAM option) @
+                    <Link 
+                        href="https://www.la-joliverie.com/formation/129-bts-services-informatiques-aux-organisations.html" 
+                        color="#8c45f4" 
+                        isExternal="true"
+                    >
+                        La Joliverie
+                    </Link>
+                </BioSection>
+            </Section>
+
+            <br />
+            <Divider />
+            <br />
+
+            <Section delay={0.3}>
+                <Heading as="h3" variant="section-title">
+                    My services
+                </Heading>
+                <Paragraph>
+                    I offer my services to create website, applications or personal formations on my free time. 
+                    If you have any idea, you can <Link href="#contact" color="#8c45f4">contact me </Link> 
+                    and we&apos;ll discuss if I can help you and make an offer !
+                </Paragraph>
+            </Section>
+
+            <br />
+            <Divider />
+            <br />
+
+            <Section in="contact" delay={0.3}>
+                <Heading as="h3" variant="section-title">
+                    Contact me
+                </Heading>
+                <SimpleGrid columns={[2, 2, 2]}>
+                    <GridItem>
+                        <Link href="https://twitter.com/YannDurand11" color="#8c45f4" target="_blank">
+                            <Button
+                                variant="ghost"
+                                color="#8c45f4" 
+                                leftIcon={<Icon as={IoLogoTwitter} />}
+                            >
+                                @YannDurand11
+                            </Button>
                         </Link>
-                    </BioSection>
+                    </GridItem>
+                    <GridItem>
+                        <Link href="https://www.linkedin.com/in/yann-durand-12456212a/" color="#8c45f4" target="_blank">
+                            <Button
+                                variant="ghost"
+                                color="#8c45f4" 
+                                leftIcon={<Icon as={IoLogoLinkedin} />}
+                            >
+                                @Yann Durand
+                            </Button>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href="https://www.instagram.com/codewithnefaden/" color="#8c45f4" target="_blank">
+                            <Button
+                                variant="ghost"
+                                color="#8c45f4" 
+                                leftIcon={<Icon as={IoLogoInstagram} />}
+                            >
+                                @codewithnefaden
+                            </Button>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href="mailto:yanndurand.contact@gmail.com" color="#8c45f4" target="_blank">
+                            <Button
+                                variant="ghost"
+                                color="#8c45f4" 
+                                leftIcon={<Icon as={IoMail} />}
+                            >
+                                yanndurand.contact@gmail.com
+                            </Button>
+                        </Link>
+                    </GridItem>
+                </SimpleGrid>
             </Section>
 
             <br />

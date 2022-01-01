@@ -82,10 +82,10 @@ const Navbar = props => {
           Resume
         </LinkItem>
         <p>|</p>
-          <LinkItem href="/works" path={path}>
+          <LinkItem href="/works" path={path} style={{display: "none"}}>
             Works
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
+          <LinkItem href="/posts" path={path} style={{display: "none"}}>
             Posts
           </LinkItem>
           <LinkItem
