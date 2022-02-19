@@ -49,7 +49,7 @@ const Navbar = props => {
       zIndex={1}
       {...props}
     >
-    <HiddenLink />
+      <HiddenLink />
       <Container
         display="flex"
         p={2}
@@ -72,7 +72,7 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-        <LinkItem href="#bio" path={path}>
+        <LinkItem href="#about" path={path}>
           About me
         </LinkItem>
         <LinkItem href="#skills" path={path}>

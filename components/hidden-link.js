@@ -5,7 +5,7 @@ const HiddenLink = () => {
         <Container>
             <Box>
                 <Link 
-                    href="#bio"
+                    href="#about"
                     position="absolute"
                     marginTop="-100px"
                     bg="black"

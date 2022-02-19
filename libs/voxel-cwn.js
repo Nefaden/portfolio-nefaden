@@ -74,7 +74,7 @@ const VoxelCwn = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/cwn.gltf', {
+      loadGLTFModel(scene, '/cwn.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {

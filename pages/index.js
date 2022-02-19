@@ -74,11 +74,11 @@ const Page = () => {
                     About me
                 </Heading>
                 <Paragraph>
-                Born in Nantes in 1997, I&apos;ve always been a fan of digital and video games. 
-                In 2015 after my baccalaureate I decided to go to the university of computer science (without much success) but I continued in this field, to do what I like the most. 
-                Today, I&apos;m software engineer developer, salary and freele. 
-                I&apos;ve decided to participate more on the web by making video and blog posts to share my passion and my knowledge. 
-                I hope you will learn a lot of things here!
+                    Born in Nantes in 1997, I&apos;ve always been a fan of digital and video games. 
+                    In 2015 after my baccalaureate I decided to go to the university of computer science (without much success) but I continued in this field, to do what I like the most. 
+                    Today, I&apos;m software engineer developer, salary and freele. 
+                    I&apos;ve decided to participate more on the web by making video and blog posts to share my passion and my knowledge. 
+                    I hope you will learn a lot of things here!
                 </Paragraph>
             </Section>
 
@@ -86,7 +86,7 @@ const Page = () => {
             <Divider />
             <br />
 
-            <Section id="bio" delay={0.2}>
+            <Section id="about" delay={0.2}>
                 <Heading as="h3" variant="section-title">
                     I&apos;m on the web
                 </Heading>
@@ -231,27 +231,35 @@ const Page = () => {
                         </Tr>
                     </Tbody>
                 </Table>
+
+                <Paragraph>
+                    Some projects for example :
+                </Paragraph>             
+                <br/>
                     
                 <SimpleGrid columns={[1, 1, 1, 1]} spacing={2}>
                     <GridItem>
                         <ProjectCard
                             projectName="cere-ar-lis"
                             stacks="JavaScript, Ionic, AR.js"
-                            description="Children's color app using image and color recognition to generate 3D model based on the picture and colors"
+                            description="Children's color app using image and color recognition to generate 3D model based on the picture and colors. 3D Models are made with Blender and the app use Ionic-React along with AR.js who use Three.js aswell"
+                            link="https://github.com/Nefaden/cere-ar-lis"
                         />
                     </GridItem>
                     <GridItem>
                         <ProjectCard
                             projectName="grasbook"
                             stacks="JavaScript, Hapi, Python"
-                            description="Grasbook is a social network based on food. Using micro-services approaches to create it"
+                            description="Grasbook is a social network based on food. Using micro-services approaches to create it, with Hapi. Using Javascript for most API, Python for messaging API and React for the front. Using Keycloak as IAM and gitlab-ci for CI/CD"
+                            link="https://github.com/Nefaden/grasbook-reaction-api"
                         />
                     </GridItem>
                     <GridItem>
                         <ProjectCard
                             projectName="Who's that actor"
                             stacks="Python, TensorFlow, Pulsar, React"
-                            description="Voice recognition to identify who's speaking in a movie. Using AI (TensorFlow, deep learning and neuronal network), python and React for the front"
+                            description="Voice recognition to identify who's speaking in a movie. Using AI (TensorFlow, deep learning and neuronal network), python for the model and API, React for the front app and Pulsar for managing requests and queues"
+                            link="https://github.com/Nefaden/OpenInnovI2Backend"
                         />
                     </GridItem>
                     <GridItem>
@@ -259,9 +267,13 @@ const Page = () => {
                             projectName="Contact-Manager"
                             stacks="React, Ansible, GitHub Actions"
                             description="An App to manage your contacts. A playground for me to learn React, Ansible and GitHub Actions"
+                            link="https://github.com/Nefaden/contact-manager"
                         />
                     </GridItem>
                 </SimpleGrid>
+                <Paragraph>
+                    Take a look to other repositories
+                </Paragraph>
                 <Box align="center" my={4}>
                     <NextLink href="https://github.com/Nefaden?tab=repositories" passHref>
                         <Link target="_blank" color={useColorModeValue('black', 'white')} >
@@ -352,7 +364,7 @@ const Page = () => {
                 </Heading>
                 <Paragraph>
                     I offer my services to create website, applications or personal formations on my free time. 
-                    If you have any idea, you can <Link href="#contact" color="#8c45f4">contact me </Link> 
+                    If you have any idea, you can <Link href="mailto:yanndurand.contact@gmail.com" color="#8c45f4" target="_blank">contact me </Link> 
                     and we&apos;ll discuss if I can help you and make an offer !
                 </Paragraph>
             </Section>
